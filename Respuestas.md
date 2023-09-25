@@ -34,9 +34,9 @@ Para acceder a nuestro falso servidor debemos de ingresar `curl 'http://localhos
 
 En la terminal en la que coloque `nc -l 8081` aparecio esto al momento de ejecutar el comando *curl* en la otra terminal.
 
-En esta aparece el metodo de peticion que en este caso es con el método GET, el host que es localhost en el puerto 8081, User-Agent que es curl, el comando por el cual se accedio a la petición,además de la versión y Accept como un \*/\*. Le doy un enter y aparece en la pestaña en el que se uso el comando *curl*, esto:
+No aparece GET `http://localhost:8081`, ya que seria muy redundante ya que se envia la solicitud desde el mismo host en que se recibe la solicitud 
 
-![Imagen Falso Servidor 3](FalsoServidor3.png)
+En esta aparece el metodo de peticion que en este caso es con el método GET, el host que es localhost en el puerto 8081, User-Agent que es curl, el comando por el cual se accedio a la petición,además de la versión y Accept como un \*/\*. Al cerrar el puerto 8081. Y ejecutar el comando curl al **localhost:8081** mo se puede conectar, hay un error.
 
 Al colocar `curl -i 'http://randomword.saasbook.info/'`se obtiene esto :
 
