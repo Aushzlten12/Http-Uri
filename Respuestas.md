@@ -18,13 +18,13 @@ Para guardarlo en un archivo se debe escribir `curl 'http://randomword.saasbook.
 
 ### Diferencias entre el sitio web y el archivo HTML
 
-Al abrir el archivo HTML en el navegador, la imagen no aparece, a diferencia que al abrir el enlace. Otra diferencia es que al cargarlo nuevamente no cambia la palabra.
+Al abrir el archivo HTML en el navegador, la imagen no aparece,ya que no la encuentra en el servidor, a diferencia que al abrir el enlace. Otra diferencia es que al cargarlo nuevamente no cambia la palabra. Es decir, que este es un archivo estático.
 
 ![Imagen HTML en navegador](htmlEnNavegador.png)
 
 ## NetCat
 
-Escucharemos por el puerto 8081.
+Iniciamos el falso servidor el puerto 8081 con el comando `nc -l 8081`.
 
 ![Imagen Puerto 8081](Puerto8081.png)
 
@@ -36,7 +36,7 @@ En la terminal en la que coloque `nc -l 8081` aparecio esto al momento de ejecut
 
 ![Imagen Falso Servidor nc](FalsoServidor2.png)
 
-En esta aparece el metodo de peticion que en este caso es GET, el host que es localhost en el puerto 8081, User-Agent que es curl, el comando por el cual se accedio a la petición y Accept como un \*/\*. Le doy un enter y aparece en la pestaña en el que se uso el comando *curl*, esto:
+En esta aparece el metodo de peticion que en este caso es con el método GET, el host que es localhost en el puerto 8081, User-Agent que es curl, el comando por el cual se accedio a la petición,además de la versión y Accept como un \*/\*. Le doy un enter y aparece en la pestaña en el que se uso el comando *curl*, esto:
 
 ![Imagen Falso Servidor 3](FalsoServidor3.png)
 
@@ -44,13 +44,13 @@ Al colocar `curl -i 'http://randomword.saasbook.info/'`se obtiene esto :
 
 ![Imagen Encabezados y Cuerpo](EncabezadoCuerpo.png)
 
-El código de respuesta en este caso es de 200 lo cual indica que la solicitud ha tenido exito. La version de HTTP es la 1.1.
+El código de respuesta en este caso es de 200 lo cual indica que la solicitud ha tenido exito. La version de HTTP es la 1.1. Además de informar que la conexión is *keept-alive* que indica la forma de conexión,también el tipo del contenido, el servidor desde que se envia la respuesta, y por ultimo todo el codigo HTML
 
 En el encabezado hay un campo Content-Type, que en este caso y en la mayoria de sitios web aparece **text/html** por lo que son archivos de texto HTML, codificados mediante **charset=utf-8**
 
 ## ¿Qué sucede cuando falla un HTTP request?
 
-Al ingresar en la terminal `curl -i *URL inexistente*` se obtuvo el código 301. Y al ingresarle una *URL* que necesita autenticación retorno el código 302
+Al ingresar en la terminal `curl -i *URL inexistente*` se obtuvo el código 301,. Y al ingresarle una *URL* que necesita autenticación retorno el código 302
 
 ![Imagen Codigo de Estado HTTP](CodigoEstado.png)
 
