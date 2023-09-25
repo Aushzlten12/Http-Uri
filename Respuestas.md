@@ -28,13 +28,11 @@ Iniciamos el falso servidor el puerto 8081 con el comando `nc -l 8081`.
 
 ![Imagen Puerto 8081](Puerto8081.png)
 
-Para acceder a nuestro falso servidor debemos de ingresar `curl 'http://localhost:8081/'`
+Abriendo en el navegador `http://localhost:8081` aparece en la terminal un método GET, el encabezado y una cookie adicional
 
-![Imagen Falso Servidor](FalsoServidor1.png)
+Para acceder a nuestro falso servidor debemos de ingresar `curl 'http://localhost:8081/' y se trata de conectar al puerto  127.0.0.1:8081
 
 En la terminal en la que coloque `nc -l 8081` aparecio esto al momento de ejecutar el comando *curl* en la otra terminal.
-
-![Imagen Falso Servidor nc](FalsoServidor2.png)
 
 En esta aparece el metodo de peticion que en este caso es con el método GET, el host que es localhost en el puerto 8081, User-Agent que es curl, el comando por el cual se accedio a la petición,además de la versión y Accept como un \*/\*. Le doy un enter y aparece en la pestaña en el que se uso el comando *curl*, esto:
 
